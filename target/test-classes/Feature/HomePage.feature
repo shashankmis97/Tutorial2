@@ -1,4 +1,7 @@
-Feature: Validate HomePage
 
-  Scenario: Validate user landed on the homepage
-    Given user validate the title
+Feature: Validate Homepage
+
+  Scenario: Validate homepage Title
+    Given User verified the homepage title
+    And It should be same as expected
+
