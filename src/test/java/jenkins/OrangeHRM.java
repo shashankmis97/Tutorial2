@@ -13,7 +13,15 @@ public class OrangeHRM {
 	private WebDriver driver;
 	@Test(priority=1)
 	public void initializeBrowser() {
-		ChromeOptions options= new ChromeOptions();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments(
+		    "--headless",               // run headless
+		    "--no-sandbox",             // required on many CI systems
+		    "--disable-dev-shm-usage",  // avoid limited or full shared memory issues
+		    "--disable-gpu",            // applicable if GPU is unavailable
+		    "--window-size=1920,1080"   // often needed to render elements correctly
+		);
+
 		//options.addArguments("headless");
 		WebDriverManager.chromedriver().setup();
 		driver= new ChromeDriver(options);
