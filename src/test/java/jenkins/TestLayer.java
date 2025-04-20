@@ -7,6 +7,7 @@ public class TestLayer {
 	
 	@Test
 	public void validateInteger() {
+		System.out.println("Checking build on push without opening chrome");
 		System.out.println("Validating Integer");
 		Assert.assertEquals(2, 2);
 	}
