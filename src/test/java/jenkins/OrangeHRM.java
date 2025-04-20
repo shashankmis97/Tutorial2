@@ -22,7 +22,8 @@ public class OrangeHRM {
 	        "--no-sandbox",
 	        "--disable-dev-shm-usage",
 	        "--disable-gpu",
-	        "--window-size=1920,1080"
+	        "--window-size=1920,1080",
+	        "--remote-debugging-port=9222"  
 	    );
 
 	    driver = new ChromeDriver(options);
