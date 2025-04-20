@@ -13,20 +13,21 @@ public class OrangeHRM {
 	private WebDriver driver;
 	@Test(priority=1)
 	public void initializeBrowser() {
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments(
-		    "--headless",               // run headless
-		    "--no-sandbox",             // required on many CI systems
-		    "--disable-dev-shm-usage",  // avoid limited or full shared memory issues
-		    "--disable-gpu",            // applicable if GPU is unavailable
-		    "--window-size=1920,1080"   // often needed to render elements correctly
-		);
-
-		//options.addArguments("headless");
-		//WebDriverManager.chromedriver().setup();
 		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-		driver= new ChromeDriver(options);
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+
+	    ChromeOptions options = new ChromeOptions();
+	    options.setBinary("/usr/bin/google-chrome"); // Add this line explicitly
+	    options.addArguments(
+	        "--headless=new",               // New headless mode for Chrome 109+
+	        "--no-sandbox",
+	        "--disable-dev-shm-usage",
+	        "--disable-gpu",
+	        "--window-size=1920,1080"
+	    );
+
+	    driver = new ChromeDriver(options);
+	    driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+	    //driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		
 	}
 	@Test(priority=2)
