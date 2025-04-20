@@ -18,7 +18,7 @@ public class OrangeHRM {
 	    ChromeOptions options = new ChromeOptions();
 	    options.setBinary("/usr/bin/google-chrome"); // Add this line explicitly
 	    options.addArguments(
-	        "--headless=new",               // New headless mode for Chrome 109+
+	        "--headless",               // New headless mode for Chrome 109+
 	        "--no-sandbox",
 	        "--disable-dev-shm-usage",
 	        "--disable-gpu",
