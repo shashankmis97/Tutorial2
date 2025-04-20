@@ -23,7 +23,8 @@ public class OrangeHRM {
 		);
 
 		//options.addArguments("headless");
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
+		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		driver= new ChromeDriver(options);
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		
@@ -31,8 +32,8 @@ public class OrangeHRM {
 	@Test(priority=2)
 	public void enterUsernamePassword() throws InterruptedException {
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("//input[@placeholder='username']")).sendKeys("Admin");
-		driver.findElement(By.xpath("//input[@placeholder='password']")).sendKeys("admin123");
+		driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin");
+		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("admin123");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 	}
